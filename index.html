@@ -815,6 +815,145 @@ nav {
   </div>
 </section>
 
+<!-- ── FAQ ── -->
+<section class="section" id="faq" style="background: var(--cream);">
+  <div class="inner">
+    <div style="max-width: 720px; margin: 0 auto;">
+      <div class="reveal" style="margin-bottom: 48px;">
+        <span class="s-label">FAQ</span>
+        <h2 class="s-title">Good questions, straight answers.</h2>
+      </div>
+
+      <div id="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How long does a repair take?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Most repairs are completed in 3 to 5 business days after I receive your glove. Vintage restorations or heavily damaged gloves may take longer — I'll give you an honest estimate upfront.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you work on both baseball and softball gloves?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — fielder gloves, catcher mitts, first base mitts, and softball gloves of all sizes. If it's a ball glove, I can work on it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How does the mail-in service work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Text or email me a photo of your glove and describe what it needs. I'll send you a quote. Once approved, ship it to me via UPS. When the work is done I'll ship it back — flat $7 return shipping fee. Simple as that.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            What lace colors do you offer?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>I stock a variety of colors and have most common ones on hand. Some specialty colors may need to be ordered — if that's the case I'll let you know upfront and it may add a couple days to the turnaround. Just tell me what you're looking for when you reach out.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do I know what service my glove needs?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Send me a photo and I'll tell you exactly what it needs — no charge for the assessment. I'm not going to upsell you on work your glove doesn't need.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            How do I pay?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Payment is due when you pick up your glove or before I ship it back. I accept Venmo, Cash App, and cash.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Can you fix any glove no matter the condition?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>I'm good at what I do but I'm not a miracle worker. If the leather is completely rotted through, the palm is cracked beyond repair, or the structure is gone — I'll tell you straight up rather than take your money. Some gloves are past saving and you deserve an honest answer, not false hope and a bill.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" onclick="toggleFaq(this)">
+            Do you restore vintage and antique gloves?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-a">
+            <p>Yes — vintage restoration is one of my favorite things to do. Whether it's a glove from the 70s or something your grandfather played with, I treat it with the respect it deserves. Starting at $150, assessed individually based on condition.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq-item {
+    border-bottom: 1px solid var(--stone-200);
+  }
+  .faq-q {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: left;
+    gap: 16px;
+    transition: color 0.2s;
+  }
+  .faq-q:hover { color: var(--brown); }
+  .faq-icon {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--tan);
+    flex-shrink: 0;
+    transition: transform 0.3s;
+    line-height: 1;
+  }
+  .faq-a {
+    display: none;
+    padding-bottom: 20px;
+  }
+  .faq-a p {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-item.open .faq-a { display: block; }
+</style>
+
 <!-- ── INSTAGRAM FEED ── -->
 <section class="section" style="background: var(--warm); padding-top: 72px; padding-bottom: 72px;">
   <div class="inner">
@@ -876,6 +1015,13 @@ nav {
 </section>
 
 <script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
   // Scroll reveal with stagger
   const ro = new IntersectionObserver((entries) => {
     entries.forEach(e => {
