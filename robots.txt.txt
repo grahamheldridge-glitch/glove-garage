@@ -1,0 +1,18 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /account/
+Disallow: /search/
+Allow: /wp-admin/admin-ajax.php
+
+# AI Crawlers - Allowed to crawl public pages, blocked from backend
+User-agent: GPTBot
+Disallow: /checkout/
+Disallow: /cart/
+
+User-agent: ClaudeBot
+Disallow: /checkout/
+Disallow: /cart/
+
+Sitemap: https://glovegarage.com/sitemap.xml
